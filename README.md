@@ -62,7 +62,7 @@ A Python scraper that collects product listings from [Shopee Indonesia](https://
  
 ---
  
-## Section 3 — Architecture Design
+## Section 3: Architecture Design
  
 End-to-end GCP-based movie recommender system design for MovFlix, a fictional streaming platform, using the MovieLens ml-latest-small dataset (100,836 ratings · 9,742 movies · 610 users).
  
