@@ -14,7 +14,7 @@ Data engineering exercises covering SQL analytics, Python web scraping, and syst
  
 ---
  
-## Section 1 — SQL Analytics
+## Section 1: SQL Analytics
  
 Exploratory SQL analysis on New Zealand's Annual Enterprise Survey (2020), practicing aggregations, window functions, and pivot/transpose patterns.
  
@@ -36,11 +36,11 @@ Exploratory SQL analysis on New Zealand's Annual Enterprise Survey (2020), pract
  
 ---
  
-## Section 2 — Python Web Scraper
+## Section 2: Python Web Scraper
  
 A Python scraper that collects product listings from [Shopee Indonesia](https://shopee.co.id) and exports to CSV and JSON.
  
-**How it works:** Shopee is a Single Page Application that loads product data from an internal JSON search API. The scraper calls that endpoint directly — no Selenium, no HTML parsing, clean structured JSON responses.
+**How it works:** Shopee is a Single Page Application that loads product data from an internal JSON search API. The scraper calls that endpoint directly, no Selenium, no HTML parsing, clean structured JSON responses.
  
 **Mandatory fields collected:** Product Name, Category ID, Price (IDR)
  
@@ -58,7 +58,7 @@ A Python scraper that collects product listings from [Shopee Indonesia](https://
  
 **Stack:** Python 3.9+ · `curl_cffi` (TLS fingerprint impersonation — required because Shopee detects standard `requests` at the SSL handshake level)
  
-🔗 **[ecommerce-product-scraper](https://github.com/richardy-lobo-sapan/ecommerce-product-scraper)** — full source, results, and run instructions
+🔗 **[ecommerce-product-scraper](https://github.com/richardy-lobo-sapan/ecommerce-product-scraper)** ----- full source, results, and run instructions
  
 ---
  
@@ -73,15 +73,15 @@ Sources       →  MovieLens data · Live user rating events · TMDB/IMDB API
 Ingestion     →  Cloud Storage (GCS) · Cloud Pub/Sub
 Processing    →  Cloud Dataflow (batch + stream ETL) · Cloud Composer (Airflow orchestration)
 Storage       →  BigQuery (data warehouse) · Vertex AI Feature Store
-ML            →  Vertex AI Training — ALS collaborative filtering + content-based hybrid
+ML            →  Vertex AI Training using ALS collaborative filtering + content-based hybrid
 Serving       →  Memorystore (Redis) · Cloud Run API · MovFlix dashboard
 ```
  
 **Recommendation algorithm:**
-- Primary: ALS (Alternating Least Squares) — chosen because the ratings matrix is 98.3% sparse
-- Secondary: Content-based filtering on genres + TF-IDF tags — handles cold start for new users and new movies
+- Primary: ALS (Alternating Least Squares) chosen because the ratings matrix is 98.3% sparse
+- Secondary: Content-based filtering on genres + TF-IDF tags, handles cold start for new users and new movies
 - Hybrid scoring: `final_score = α × ALS_score + (1 − α) × content_score` where α scales with user rating history depth
-📁 [`section3-architecture/`](./section3-architecture/) — full architecture document (PDF)
+📁 [`section3-architecture/`](./section3-architecture/) --------- full architecture document (PDF)
  
 ---
  
