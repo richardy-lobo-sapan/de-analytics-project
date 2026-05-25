@@ -30,8 +30,8 @@ Exploratory SQL analysis on New Zealand's Annual Enterprise Survey (2020), pract
 5. Top 3 and bottom 3 variable names in transposed/pivot format per year
 **Key decisions:**
 - Target DB: PostgreSQL
-- `DENSE_RANK()` used for Problem 5 — preserves consecutive rank positions unlike `RANK()`, and is deterministic unlike `ROW_NUMBER()`
-- `Value` column stored as VARCHAR with comma-formatting — all aggregations use `CAST(REPLACE(Value, ',', '') AS NUMERIC)`
+- `DENSE_RANK()` used for Problem 5 to preserves consecutive rank positions unlike `RANK()`, and is deterministic unlike `ROW_NUMBER()`
+- `Value` column stored as VARCHAR with comma-formatting, all aggregations use `CAST(REPLACE(Value, ',', '') AS NUMERIC)`
 📁 [`section1-sql/section1_SQL.sql`](./section1-sql/section1_SQL.sql)
  
 ---
@@ -56,7 +56,7 @@ A Python scraper that collects product listings from [Shopee Indonesia](https://
 | `discount_pct` | Promotional strategy; markdown optimisation input |
 | `product_url` | Full traceability; enables price monitoring across runs |
  
-**Stack:** Python 3.9+ · `curl_cffi` (TLS fingerprint impersonation — required because Shopee detects standard `requests` at the SSL handshake level)
+**Stack:** Python 3.9+ · `curl_cffi` (TLS fingerprint impersonation required because Shopee detects standard `requests` at the SSL handshake level)
  
 🔗 **[ecommerce-product-scraper](https://github.com/richardy-lobo-sapan/ecommerce-product-scraper)** ----- full source, results, and run instructions
  
